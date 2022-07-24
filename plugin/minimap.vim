@@ -83,7 +83,7 @@ function! MinimapInit() abort
       autocmd!
       autocmd WinEnter <buffer> if winnr("$") == 1 | quit | endif
       autocmd WinEnter <buffer> wincmd p
-      autocmd WinClosed <buffer> let <SID>minimap = 0 | autocmd! MINIMAP
+      autocmd WinClosed <buffer> let s:minimap = 0 | autocmd! MINIMAP
       autocmd TextChanged,VimResized,BufWinEnter,WinEnter * call MinimapUpdate()
       autocmd CursorMoved,CursorMovedI * call <SID>move()
     augroup END
